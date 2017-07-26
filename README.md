@@ -7,9 +7,9 @@ Docker images for JMeter 3.2 master and slave configurations
 ### Bring up slaves
 
 ```bash
-sudo docker run -dit --name slave01 bsmithaxs/jmeter-slave /bin/bash
-sudo docker run -dit --name slave02 bsmithaxs/jmeter-slave /bin/bash
-sudo docker run -dit --name slave03 bsmithaxs/jmeter-slave /bin/bash
+sudo docker run -dit --name slave1 bsmithaxs/jmeter-slave /bin/bash && \
+sudo docker run -dit --name slave2 bsmithaxs/jmeter-slave /bin/bash && \
+sudo docker run -dit --name slave3 bsmithaxs/jmeter-slave /bin/bash
 ```
 
 ### Bring up master
@@ -45,7 +45,7 @@ sudo docker exec -it master /bin/bash
 ### Run the sample test plan
 
 ```bash
-/home/jmeter/apache-jmeter-3.2/bin/jmeter -n -t /home/jmeter/apache-jmeter-3.2/bin/test.jmx -Djava.rmi.server.hostname=(master ip) -Dclient.rmi.localport=60000 -R(slave01 IP),(slave02 IP),(slave03 IP)
+/home/jmeter/apache-jmeter-3.2/bin/jmeter -n -t /home/jmeter/apache-jmeter-3.2/bin/test.jmx -Djava.rmi.server.hostname=(master ip) -Dclient.rmi.localport=60000 -R(slave1 IP),(slave2 IP),(slave3 IP)
 ```
 
 ## On AWS instances
