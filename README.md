@@ -45,7 +45,7 @@ sudo docker exec -it master /bin/bash
 ### Run the sample test plan
 
 ```bash
-/home/jmeter/apache-jmeter-3.2/bin/jmeter -n -t /home/jmeter/apache-jmeter-3.2/bin/test.jmx -Djava.rmi.server.hostname=(master ip) -Dclient.rmi.localport=60000 -R(slave1 IP),(slave2 IP),(slave3 IP)
+/home/jmeter/apache-jmeter-3.2/bin/jmeter -n -t /home/jmeter/apache-jmeter-3.2/bin/test.jmx -Djava.rmi.server.hostname=172.17.0.5 -Dclient.rmi.localport=60000 -R172.17.0.2,172.17.0.3,172.17.0.4
 ```
 
 ## On AWS instances
