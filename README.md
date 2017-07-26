@@ -93,19 +93,19 @@ sudo docker run -dit -e LOCALIP='(slave3 ip)' -p 1099:1099 -p 50000:50000 bsmith
 sudo docker run -dit --name master -p 60000:60000 bsmithaxs/jmeter-master:latest /bin/bash
 ```
 
-### Copy the test to the ec2 instance
+### Copy the test to the master container
 
 ```bash
 curl https://raw.githubusercontent.com/smithbr/jmeter-docker/master/test.jmx > test.jmx
 ```
 
-### Put the test in the container
+### Move the test to the container
 
 ```bash
 sudo docker exec -i master sh -c 'cat > /home/jmeter/apache-jmeter-3.2/bin/test.jmx' < test.jmx
 ```
 
-### Enter the container
+### Enter the master container
 
 ```bash
 sudo docker exec -it master /bin/bash
