@@ -36,3 +36,5 @@ RUN curl -L https://jmeter-plugins.org/get/ > \
 # jpgc-sense = https://github.com/Blazemeter/jmeter-bzm-plugins/blob/master/sense-uploader/BlazemeterPlugin.md
 RUN $JMETER_HOME/bin/PluginsManagerCMD.sh install \
         jpgc-casutg,jpgc-tst,jpgc-ffw,jpgc-csl,jpgc-autostop,jpgc-functions,jpgc-dummy,jpgc-json,jpgc-sense
+
+RUN $JMETER_HOME/bin/PluginsManagerCMD.sh status
