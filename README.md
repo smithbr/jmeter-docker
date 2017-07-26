@@ -66,9 +66,9 @@ Port=60000      Protocol=tcp    Source=0.0.0.0/0
 ### On the slave instance(s), do
 
 ```bash
-sudo docker run -dit --name slave01 -e LOCALIP='(slave01 IP)' -p 1099:1099 -p 50000:50000 bsmithaxs/jmeter-slave /bin/bash
-sudo docker run -dit --name slave02 -e LOCALIP='(slave02 IP)' -p 1099:1099 -p 50000:50000 bsmithaxs/jmeter-slave /bin/bash
-sudo docker run -dit --name slave03 -e LOCALIP='(slave03 IP)' -p 1099:1099 -p 50000:50000 bsmithaxs/jmeter-slave /bin/bash
+sudo docker run -dit -e LOCALIP='(slave1 ip)' -p 1099:1099 -p 50000:50000 bsmithaxs/jmeter-slave /bin/bash
+sudo docker run -dit -e LOCALIP='(slave2 ip)' -p 1099:1099 -p 50000:50000 bsmithaxs/jmeter-slave /bin/bash
+sudo docker run -dit -e LOCALIP='(slave3 ip)' -p 1099:1099 -p 50000:50000 bsmithaxs/jmeter-slave /bin/bash
 ```
 
 ### On the master instance, do
@@ -80,5 +80,5 @@ sudo docker run -dit --name master -p 60000:60000 bsmithaxs/jmeter-master /bin/b
 ### On master, run the test
 
 ```bash
-./jmeter -n -t docker-test.jmx -Djava.rmi.server.hostname=(master IP) -Dclient.rmi.localport=60000 -R(slave01 IP),(slave02 IP),(slave03 IP)
+./jmeter -n -t docker-test.jmx -Djava.rmi.server.hostname=(master ip) -Dclient.rmi.localport=60000 -R(slave1 ip),(slave2 ip),(slave3 ip)
 ```
