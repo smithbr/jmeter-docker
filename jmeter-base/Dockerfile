@@ -1,5 +1,5 @@
 FROM ubuntu
-MAINTAINER Brandon Smith <bsmith@axs.com>
+LABEL maintainer="Brandon Smith <brandon@bsmith.la>"
 
 RUN apt-get update && \
     apt-get install -y \

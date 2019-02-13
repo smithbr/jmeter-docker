@@ -1,5 +1,5 @@
-MAINTAINER Brandon Smith <bsmith@axs.com>
 FROM bsmithio/jmeter-base
+LABEL maintainer="Brandon Smith <brandon@bsmith.la>"
 
 RUN curl http://archive.apache.org/dist/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz > \
         /home/jmeter/apache-maven-3.5.0-bin.tar.gz && \

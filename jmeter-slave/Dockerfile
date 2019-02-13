@@ -1,5 +1,5 @@
-MAINTAINER Brandon Smith <bsmith@axs.com>
 FROM bsmithio/jmeter-base
+LABEL maintainer="Brandon Smith <brandon@bsmith.la>"
 
 EXPOSE 1099 50000
 
