@@ -7,15 +7,15 @@ Docker images for JMeter 3.2 master and slave configurations
 ### Bring up slaves
 
 ```bash
-sudo docker run -dit --name slave1 bsmithaxs/jmeter-slave:latest /bin/bash && \
-sudo docker run -dit --name slave2 bsmithaxs/jmeter-slave:latest /bin/bash && \
-sudo docker run -dit --name slave3 bsmithaxs/jmeter-slave:latest /bin/bash
+sudo docker run -dit --name slave1 bsmithio/jmeter-slave:latest /bin/bash && \
+sudo docker run -dit --name slave2 bsmithio/jmeter-slave:latest /bin/bash && \
+sudo docker run -dit --name slave3 bsmithio/jmeter-slave:latest /bin/bash
 ```
 
 ### Bring up master
 
 ```bash
-sudo docker run -dit --name master bsmithaxs/jmeter-master:latest /bin/bash
+sudo docker run -dit --name master bsmithio/jmeter-master:latest /bin/bash
 ```
 
 ### Check if they're all running
@@ -82,15 +82,15 @@ exit
 Where `$LOCALIP` should be the public IP address of the host.
 
 ```bash
-sudo docker run -dit -e LOCALIP='(slave1 ip)' -p 1099:1099 -p 50000:50000 bsmithaxs/jmeter-slave:latest /bin/bash
-sudo docker run -dit -e LOCALIP='(slave2 ip)' -p 1099:1099 -p 50000:50000 bsmithaxs/jmeter-slave:latest /bin/bash
-sudo docker run -dit -e LOCALIP='(slave3 ip)' -p 1099:1099 -p 50000:50000 bsmithaxs/jmeter-slave:latest /bin/bash
+sudo docker run -dit -e LOCALIP='(slave1 ip)' -p 1099:1099 -p 50000:50000 bsmithio/jmeter-slave:latest /bin/bash
+sudo docker run -dit -e LOCALIP='(slave2 ip)' -p 1099:1099 -p 50000:50000 bsmithio/jmeter-slave:latest /bin/bash
+sudo docker run -dit -e LOCALIP='(slave3 ip)' -p 1099:1099 -p 50000:50000 bsmithio/jmeter-slave:latest /bin/bash
 ```
 
 ### On the master instance, do
 
 ```bash
-sudo docker run -dit --name master -p 60000:60000 bsmithaxs/jmeter-master:latest /bin/bash
+sudo docker run -dit --name master -p 60000:60000 bsmithio/jmeter-master:latest /bin/bash
 ```
 
 ### Copy the test to the master container

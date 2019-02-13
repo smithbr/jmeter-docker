@@ -1,5 +1,5 @@
-FROM bsmithaxs/jmeter-base
 MAINTAINER Brandon Smith <bsmith@axs.com>
+FROM bsmithio/jmeter-base
 
 EXPOSE 1099 50000
 
